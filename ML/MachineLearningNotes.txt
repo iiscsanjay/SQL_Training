@@ -1,0 +1,371 @@
+Machine Learning:
+        
+    - Dataset : download many source Kaggle, dataworld, Excel (xlrd, xlwt, pandas)
+    
+    - Unsupervised Learning: you don't know anything about the outcome
+        
+        - Clustering: how many clusters or cluster, should i divide the data into?
+        
+        Example :
+        1. Diabetics 768 Patients : limited (Taken from a maternity hospital) : PIMA
+        2. Health Indicator Diabetics Dataset :  Survey of 441,455 individuals and has 330 features.
+            dataset : 21 variables :
+                X : 20 variables:  Random user 20 variable
+                y : 1 variables
+                
+                ML :  Save for future
+            dataset : 200 variables ( no)
+                    : which variable are able to connect with outcome? only select those variables
+
+        => 2 clusters and show which patients belongs to which clusters?
+        => 3 clusters and show which patients belongs to which clusters?
+        => 4 clusters and show which patients belongs to which clusters?
+        => 5 clusters and show which patients belongs to which clusters?
+        
+        which cluster size is perfect for dividing the samples into cluster?
+            - elbow method
+        
+        - Association: Association (correlation) between the samples
+        
+        Example : grocery store datasets to find the association of buying pattern between items
+    
+    - Supervised Learning:  Know the Outcomes (from Previous data experience)
+        - Divide the dataset into Training /Testing : 80:20, 75:25, 70:30, 60:40
+        
+
+        Examples : diabetics : train_test_split() Machine Learning using Sampling Method : 4 probabilities / 4 non-based sampling 
+            Datatests : Train/Test
+            Datatests : (Train,Validate)/Test
+
+        X : Independent variables (x1,x2,x2.....xn)
+            y : Dependent Variable
+
+    
+            XTrain : ( Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
+            yTrain : Outcome
+       
+                Y = F(X)
+                
+            Example : Linear Regression Model Y = MX + C 
+
+            m = (y1-y2) / (x-x2) = (0-6)/(3-0) = -6/3 = -2, c= 6  
+            
+            2x + y = 6
+            y = -2x + 6 -- eq(1)
+            y = mx + c  -- standard line equation
+            m = -2, c = 6
+            (x1,y1) (x2,y2) is given then we used to compute m and c 
+            (0,6 ) (3,0)
+
+            6 = m*0 + c
+            c = 6
+
+            0 = 3*m + 6
+            m = -2
+            
+
+
+                Y = m1x1 + m2x2 + m3x3 + ........m20x20 + C
+
+
+            Training :
+                
+                yTrainPred = F(Xtrain)   : F is generalize method
+                E = (yTrainPred - yTrain)
+                Cost = Minimize the Error 
+
+                Trial and Error : ML (Supervised Learning : Ensemble Methods), Neural Network Model optimization iteration 100000, Deep Learning and not in ML
+
+            XTest: ( Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, DiabetesPedigreeFunction, Age)
+            yTest : Outcome
+
+            => ML : Choose an appropriate Algorithm (Regression/Classification)
+            => Train the model : by putting Training Xtrain/ yTrain
+            => Test the model : by giving xTest and generate yPred 
+            => Validate the model : Regression (Error) / Classification (Accuracy)
+            
+            Regression : Measuring Metric as Error
+                yPred = 1650.34
+                yTest = 1630.12
+
+            Classification : Measuring Accuracy, Precision, Recall, F-Score,
+                Sample : 0 => Pred 0
+                Sample : 0 => Pred 1
+                Sample : 1 => Pred 0
+                Sample : 1 => Pred 1
+
+
+
+        - Regression : Continuous Data Value
+
+            Sales = 0.4 * day of Month + 0.2 * month  + temp * 0.2
+            Stock Exchange prediction : NasDAQ/ NIFTY/SENSEX
+            Weather Temperature prediciton :
+
+            Example :
+                - Wallmart Sale Prediction Dataset = 1623.45$
+                - Weather Prediction Dataset : 45 F
+
+        - Classification: Discrete Value : 0/1/2/3/4/5/A/B/C/E/D
+
+            When the outcome/result/prediction is discrete or can divide them into different group/class?
+            
+            Binary Classification Examples :
+                - Patients can be diabetic or non-diabetic? 0/1 Binary Classification
+                - In Credit Card Fraud Detection, Can you predict that a transaction is ligit or fraud transaction ? 0/1 Binary Classification
+                - Cancer Patient dataset : Patient is suffering with Benign or Malignant Cancer? 0/1
+
+            Multi Classification Examples :
+                - Nominal Classification : When we divide the classes into categorical variables i.e. A, B, C, D, E)
+                - Ordinal Classification : When we divide the multiple class as number i.e. 0,1,2,3,4,5
+                - What are the grades of the students in the class? A/B/C/D/F, A+/A/A-/B+/B/B-... Nominal Classification
+                - What is the employee level in the company ? 1/2/3/4/5  : Ordinal Classification
+   
+
+
+
+Dimensionality Reduction :
+
+Datasets: Columns / Features / Atrributes 
+    - Many columns : 100 columns
+    - should we built up our Machine Learning model with all features?
+    - If yes, what would be accuracy of my Model?
+    
+Linear Regression :
+    
+    Line : Linear : Y = MX + C
+
+    Y(Sales/Temp) = m1x1 + m2x2+ m3x3 + ........ + m100x100
+
+    where m1,m2,m3...m100 is the constant values which we will find out.
+
+    - Most of the model, if number of features are greater than 30 or more, 
+    models doesn't able to perform well.
+
+    - Select only few features to build the model: (Dimensionality Reduction )
+        - Feature Selection
+        - Feature Elimination
+        - Feature Elicitation
+        - Prinicipal Component Analysis (PCA)
+        - Single Value Decomposition (SVD)
+        - linear discriminant analysis (LDA).
+    
+
+    p > 0.8
+
+    Y = m1x1 + m2x2 + m3x3 + m4x4 + c
+        
+    m1 and m3 are high correlated > 0.8 
+    m2 and m4 are high correlated > 0.9
+
+you can build the model from any of those selected independent variables due 
+Multicollinearity.
+
+    Y =  m1x1 + m2x2
+    Y =  m1x1 + m4x2
+    Y =  m3x3 + m2x2
+    Y =  m3x3 + m4x2
+    
+
+
+    => Overfitting/High Variance And Underfitting / High Bias : 
+    => Kind of Different Sampling Methods : Random/ Stratified Sampling
+    => Find the Best Parameter (Hyper Parameter) for a classification Kernel : Grid Search
+    => Cross Validation : Validate Average or general accuracy of your model
+    => Features/Columns/Attributes :
+        - Feature Selection :
+                - Univariate Feature Selection : (4)
+                - Recursive Feature Elimination: 
+        - Feature Importance:
+            - Random Forest Classifier:
+            - Extra Tree Classifier: 
+        - Principal Component Analysis: PCA
+
+Project : Classification/Regression
+Steps :
+    1. Get the dataset from Kaggle or any where
+    2. Read the dataset file into project
+    3. Describe Columns, data-types, remove null values and remove unnecesary columns
+    4. Exploratory Data anaylsis
+    5. Hypothesis about Null Hypothesis and Alternate Hypothesis (Annova Test)
+    6. Build the model and fit the model
+    7. Cross Validation methods to validate the accuracy, precision, recall and f1-score
+    8. ROC_AUC for each model
+
+Supervised Learning :
+
+    - Regression Model :
+        1. Linear Regression Y = M1x1 + M2x2 + ...+c 
+            * Least Square Fit Method to compute coefficients
+            * PolyNomials : to generate multi degree equation
+            * Regularization :
+        1.1 Extenstion : Ridge Regression: (Penalizing  the summation of Amplitude^2) L2 Penalty
+                        * Alpha value should be not vary high (0e^-5 to 1 ) 
+                        * large alpha value makes it overfitting
+                        * lesser alpha value makes it Underfitting
+        1.2 Extenstion : Lasso Regression: (Penalizing  the summation of absolute value of Amplitude) L1 Penalty
+                
+        2. SVM : works in Regression  (Supported Vector Regressor SVR/ LinearSVR)
+                        -svm.SVR()
+                        -svm.LinearSVR()
+                        -svm.nuSVR()
+        3. Random Forest Regressor(): 
+        4. Decision Tree Regressor():
+
+    - Classification Model:
+        1. Logistic Regression  :  (Estimators) 
+                        Y = M1X1 + M2X2 + M3X3 + ...... + C
+
+                        y = Sigmoid(Y) 
+                        Sigmoid function generates non-linearity in linear samples.
+
+                        y(0/1) : Binary Classification =  sigmoid(Y) > Threshold Value
+                            y(1) =  sigmoid(Y) > 0.7
+                            y(0) =  sigmoid(Y) <= 0.7
+                            
+                        y(0/1/2/3/4) : Multi class Classication
+                                Y(0) : sigmoid(Y) <= 0.2 
+                                Y(1) : sigmoid(Y) >  0.2 and <= 0.3 
+                                Y(2) : sigmoid(Y) > 0.3 and <= 0.4
+                                Y(3) : sigmoid(Y) > 0.4 and <= 0.6 
+                                Y(4) : sigmoid(Y) > 0.6 
+
+        2. Supported Vector Machine (SVM): Internal Kernel or mathmatical formula can be changed (Simple/complex formula)
+                        -svm.SVC(kernel=Linear, RBF, Sigmoid,Poly)
+                        -svm.LinearSVC()
+                        -svm.nuSVC()
+        3. Naive Bayes Classification: Bayes Theroem of Conditional Probabilty
+                        - GaussianNB()
+                                     
+        4. K-nearest Neighbour Classification: KNNeighbour(nneighbour=5)
+        5. Decision Tree Classifier()
+
+    Kernel : ()
+        4. K-nearest Neighbour Classification:
+        5. Decision Tree : A : 83
+        6. Random Forest : A : 81
+        7. Ensemble Method:
+
+
+    Algorithm : LazyPredict()
+
+Linear Regression : Least Square Fit Method 
+
+panda data frame : df 
+dividied the data into X, y 
+
+encoding,
+PolyNomials
+linearre()
+
+    BlackBox (xtrain,ytrain,x_test)  = y_Pred
+
+ Model = (Data need to perform (Encoding), polynomial fit (2) , kernel() )
+    makepipeline()
+
+class Pipeline:
+    def __init__(self,step**):
+        pass
+
+    def makepipeline(self,steps**):
+        pass
+
+
+
+
+
+Biased : 
+    Input ->    ML    -> Class 0 /1      (Biased : it always predict the same class 1 : 95%
+Variance:
+    Model behaviour keeps changing even small changes in the input (1/0)
+
+   xtest1 ->  ML -> (training set 1) : class 1 
+   xtest1 ->  ML -> (training set 2) : class 0 
+
+
+High Variance : (Model is too flexible)
+High Bias     : (Model is Rigid)
+
+Prediction Error = Summation of (Bias + Variance)
+
+Y = x^20 + x^2 + x
+Samples : 1000  (70%-30% or 80%-20% or 60%-40%)
+
+
+1. Remove the irrlevant Features (correlation Matrix) 
+2. you can select the prominent featues (4) : Feature Selection 
+3. Performing the Dimentionality reduction to convert the matrix from (1000,38) -> (1000,4) by using PCA
+
+
+1000, 38(features/attributes/columns) Dimentionality Reduction algorithm (PCA) -> (1000,4)
+
+Y = m1x1 + m2x2 + m3x3 +.......m38x38 + c
+1320 = High Variance, low bias
+i
+algoirithm which low variance and high bias (Dimentionality is much in the data sets)
+
+
+
+
+Cancer Data Sets: Benign and Malignent 786 Samples
+Training /Testing as 70% and 30  (500 Samples for Training , 236 sameple for Testing) 
+clf =     ML (Logisitic Regression) # buidling the model
+clf.fit(Xtraing, yTrain) # training the model
+
+Xtest (Samples to be tested on the trainied model) for verifying the accuracy of the model
+Xtest(236 samples : (110 samples belongs to Benign (0) clss , 126 samples belongs to Malignent (1) Classes)
+yTest (Actual output)
+
+
+yPred = clf.predict(XtesT) # Predicted output from the model
+
+yPred is haveing 200 values as zero in the output and 26 as one value
+
+
+If your model is predicting around 90% samples for Malignent class as Bening class
+
+
+Divide the datasets into multiple training data sets
+70-30 (xTrain1,xTest1,yTrain1,yTest1)
+70-30 (xTrain2,xTest2,yTrain2,yTest2)
+70-30 (xTrain3,xTest3,yTrain3,yTest3)
+
+
+clf1 = ML (Xtrain1,ytrain1)
+clf2 = ML (Xtrain1,ytrain1)
+clf3 =  ML (Xtrain1,ytrain1)
+
+
+  xTest1 ->      ML1 /Ml2/ML3
+
+  Sample Input, Different Training sets your model produces the different results (High Variance ) 
+
+
+Consider model design by making these factor fixed :
+1. Optimal model design between high variance and high bias
+2. Too Complex model and too high input data
+
+- Encoding / Label Encoder (Categorical or nominal data to numerical value)
+
+
+    Multi colinearity : Says only one variables from high correlated variables should be used to build the model.
+    Y = m1x1 + m2x2 + c
+
+    corr(x1,x2 ) = 0.95
+
+    Y = m1x1 + c
+    Y = m2x2 + c
+    Y = m1^5x1 + m2^3x2 +  e^x3 + log(x4) + c
+
+    => Train_Test_Split(X,y,train_size=0.70,random_sample=42,stratfy=y)
+    size = 569
+    Train = 70 and Test : 30
+    data Set Index = [0,1,2,....568]
+
+    Train = [ 5,11, 14, 98 , 29 .....]
+    Test = [ 2,45,,65,2,23,]
+
+    Cross Validation : if we divide the data into multiple Parts :
+        
+
+

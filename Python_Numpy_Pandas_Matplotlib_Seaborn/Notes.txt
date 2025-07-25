@@ -1,0 +1,51 @@
+Basic :
+
+1.  Comment:
+    # Comment : This is my program
+
+    """ This is my second program
+        which will generate output of table of 2 """
+
+2. Variables : (Data Types)
+        - Literal Constants : 5, 1.323, "sadasdsa"
+        - Number : Integer (whole Number)  -inf to +inf
+        - Decimal Point numbers (Float/double) : Double (C/C++ )  72 decimal point 3.434343434343434343434324324324324324 
+        - String : 'My name is ASSDAS'    "What's your name ? "
+        - Escape Sequence: examples  'What\'s your name?'
+          s = 'I am SADASD. I am working in data science. \
+          I live in Bangalore, India'
+        
+3. Strings Are Immutable :
+    S = "This is my program"
+         01234
+
+
+4. Naming Convention of variable :
+    Variable name : Identifier Naming
+        - The first character of the identifier must be a letter of the alphabet (uppercase ASCII or lowercase ASCII or Unicode character) or an underscore (_).
+        - The rest of the identifier name can consist of letters (uppercase ASCII or lowercase ASCII or Unicode character), underscores (_) or digits (0-9).
+        - Identifier names are case-sensitive. 
+
+    myName = "sanjay"
+    myname = "ABC"
+    Name =  "SADASDASD"
+    _name = "ASDASASD"
+    myName9_ = "sadSA" 
+
+5. Operators :
+    In the computers, we have all the numbers (whole numbers ) are saved in binary values :
+    Number Systems :
+        - Decimal Number :  0,1,2,3,4,5,6,7,8,9  ( 10 digits)
+        - Binary Number :  0, 1 (2 digit)             101 (Binary of 5 Decimal value )
+        - Octal Number :   0,1,2,3,4,5,6,7  ( 8 digits)
+        - Hexa Decimal number:  0,1,2,3,4,5,6,7,8,9,10(A), 11(B), 12(C), 13 (D), 14(E), 15 (F)
+
+    - Arithmetical operators:
+    - Logical operators:
+    - Assignment operators:
+
+
+
+
+
+

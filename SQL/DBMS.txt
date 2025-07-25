@@ -1,0 +1,108 @@
+-- How to insert data into MySQL from a file. // local_infile, secure_file_priv,data folder
+-- How do we access the MySQL from Pandas.
+
+-- To check the check constraint in MySQL : information_schema.CHECK_CONSTRAINTS
+-- TRUNCATE in reference table
+-- GRANT,REVOKE SELECTIVE PRIVILEGES
+
+Links for installation:
+
+MySQL :
+
+    XAMMP : Apache +  MariaDB + PHP + Perl
+    Windows : https://dev.mysql.com/downloads/installer/
+    MAC : https://dev.mysql.com/downloads/mysql/
+
+MySQL Workbench :
+    Windows/ Mac : https://dev.mysql.com/downloads/workbench/
+
+Database Management Systems:
+    
+    Relationship: cardinality ( 1:1, 1:M, M:1, M:N) 
+
+    Customer : Payments : 1 : M cards
+    Customer : Addresss : M : N addresses
+    SSN : Person  => 1 : 1
+    Orders : Person => M : 1
+
+
+Relational Database : Collection of Multiple Tables connected with Relationship
+
+In a table , rows is known as records.
+Columns : Fields, or Attributes (Composite Attributes) SSN
+
+Keys :  (unique values)
+    
+    - Primary Key : key value which can identify unique record in the table
+    - Foreign Key : when the Primary key of one table is used in another table 
+                 as column, then it is known as Foreign key. 
+
+Table (Entity) : Multiple Columns(Attributes)
+
+
+
+
+CONSTRAINTS:
+-- NOT NULL        - Ensures that a column cannot have a NULL value
+-- PRIMARY KEY     - A combination of a NOT NULL and UNIQUE. 
+                     Uniquely identifies each row in a table
+-- UNIQUE          - Ensures that all values in a column of a table are different
+-- DEFAULT         - Sets a default value for a column if no value is specified
+-- FOREIGN KEY     - Prevents actions that would destroy links between tables
+-- CHECK           - Ensures that the values in a column satisfies a specific condition
+-- AUTO INCREMENT  - Make sure if you don't enter the pk, then it will take default +1
+
+MySQL DATA TYPES :
+    
+    https://www.w3schools.com/mysql/mysql_datatypes.asp
+
+
+SQL Commands :
+    - SHOW DATABASES; // It will display all the database inside MySQL SERVER
+    - SHOW TABLES; // It will list all the tables in selected database
+    - USE DBNAME; // It will select the database for usages
+    - DESCRIBE TABLE; // display the details of the table
+    
+    - DDL : Data Definition Languages (Commands: create )
+        - CREATE :
+            // Creating a database schema (outer layer) 
+            // didn't check mySQL database and try to create the database
+            DATABASE:
+                CREATE DATABASE DBNAME;
+                CREATE DATABASE if not Exists DBNAME;
+                CREATE SCHEMA if not Exists DBNAME;
+            TABLE:
+                CREATE TABLE IF NOT EXISTS TNAME (
+                        COL1NAME DATA_TYPE NOT NULL | NULL | UNIQUE | AUTO INCREMENT | PRIMARY KEY | DEFAULT,
+                        COL2NAME DATA_TYPE,
+                        COL3NAME DATA_TYPE,
+                    );
+            INDEX:
+                CREATE INDEX INDEXNAME ON table_name (column1, column2, ...);
+
+        - DROP :
+            // drop the database from the mysql without checking
+            // if database is not there, it failed
+            DROP DATABASE DBNAME;
+            DROP DATABASE IF EXISTS DBNAME; 
+            DROP SCHEMA IF EXISTS DBNAME; 
+            DROP TABLE TNAME;
+
+
+        - ALTER : perform changes in schema
+              ALTER TABLE TNAME ADD CONSTRAINT CONSTRAINTNAME CONSTRAINTTYPE (COLUMN);
+              ALTER TABLE TNAME DROP INDEX INDEXNAME;
+              ALTER TABLE TNAME ADD COLUMN COLUMNAME COLUMNTYPE DEFAULT(LAST) FIRST | AFTER COLUMNAME;
+              ALTER TABLE TNAME DROP COLUMN COLUMNNAME;
+              ALTER TABLE TNAME MODIFY COLUMN ;
+              ALTER TABLE TNAME RENAME TO NewTNAME;
+              ALTER TABLE TNAME CHANGE OLDCOL NEWCOL COLDATATYPE FIRST | AFTER COLNAME;
+
+        - TRUNCATE : 
+
+
+
+    - DML : Data Manipulation Languages (Commands : insert,update, delete) 
+    - DCL : Data Control Languages (Commands i.e. assigning permission and control)
+    - DQL : Data Query Languages (Data Retrieval Commands i.e. Select,where,aggregation)
+    - TCL : Transactional Control Language (Commands)
