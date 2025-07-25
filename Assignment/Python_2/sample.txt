@@ -1,6 +1,0 @@
-Annova Testing Example :
-Chi Square Testing Example :
-A/B Testing Example :
-    Chebyshev's InEquility : 
-
-Chi Square Testing Example :
