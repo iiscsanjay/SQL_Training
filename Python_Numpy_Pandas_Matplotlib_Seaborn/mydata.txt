@@ -1,5 +1,0 @@
-sanjay|45|K|Asian
-Hari|25|K|American
-Yassaar|35|K|Russian
-ABCD|45|K|Asian
-
